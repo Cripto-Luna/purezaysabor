@@ -12,8 +12,8 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <svg class="logo-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                    <path d="M12 22c0-5.523-4.477-10-10-10 5.523 0 10-4.477 10-10 0 5.523 4.477 10 10 10-5.523 0-10 4.477-10 10z"/>
+                <svg class="logo-leaf" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-11 8"/>
                 </svg>
                 <span class="logo-text">Pureza y Sabor</span>
             </div>
@@ -38,19 +38,19 @@
     <section class="menu-section" id="menu">
         <h2>Nuestro Menú</h2>
         <div class="menu-cats">
-            <div class="cat-card active">
+            <div class="cat-card active" onclick="filtrar('todos', this)">
                 <div class="cat-icon">📦</div>
                 <span>Todos</span>
             </div>
-            <div class="cat-card">
+            <div class="cat-card" onclick="filtrar('pasteles', this)">
                 <div class="cat-icon">🎂</div>
                 <span>PASTELES</span>
             </div>
-            <div class="cat-card">
+            <div class="cat-card" onclick="filtrar('tortas', this)">
                 <div class="cat-icon">🍰</div>
                 <span>TORTAS</span>
             </div>
-            <div class="cat-card">
+            <div class="cat-card" onclick="filtrar('combos', this)">
                 <div class="cat-icon">🎁</div>
                 <span>COMBOS PARA REGALAR</span>
             </div>
@@ -63,7 +63,7 @@
         <p class="section-sub">Hechos con ingredientes reales, sin azúcar y sin gluten</p>
         <div class="products-grid">
 
-            <div class="product-card">
+            <div class="product-card" data-cat="pasteles">
                 <div class="product-img">
                     <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775943329271-afktnhu4e8n.png" alt="Loaf de Almendra">
                     <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-cat="tortas">
                 <div class="product-img">
                     <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775943535216-u1icgmh881.png" alt="Torta de Vainilla con Yogurt">
                     <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
@@ -93,7 +93,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-cat="pasteles">
                 <div class="product-img">
                     <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775947303740-08gb16lnj6hh.png" alt="Pastel de Chocolate">
                     <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
@@ -108,7 +108,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-cat="pasteles">
                 <div class="product-img">
                     <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775943241018-w526c4xw2gm.jpeg" alt="Loaf de Banano">
                     <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
@@ -123,7 +123,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-cat="pasteles">
                 <div class="product-img">
                     <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775935064564-8mpobl3g3co.png" alt="Pastel de Fresa">
                     <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
@@ -138,7 +138,7 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-cat="pasteles">
                 <div class="product-img">
                     <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775942893435-4qhqg1egyfl.png" alt="Pastel de Zanahoria">
                     <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
@@ -200,8 +200,8 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="nav-logo">
-                    <svg class="logo-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                        <path d="M12 22c0-5.523-4.477-10-10-10 5.523 0 10-4.477 10-10 0 5.523 4.477 10 10 10-5.523 0-10 4.477-10 10z"/>
+                    <svg class="logo-leaf" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-11 8"/>
                     </svg>
                     <span class="logo-text">Pureza y Sabor</span>
                 </div>

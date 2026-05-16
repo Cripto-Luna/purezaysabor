@@ -4,6 +4,14 @@ const WA_NUMBER  = "50497083296";
 const WA_MSG     = encodeURIComponent("Hola, quiero hacer un pedido en Pureza y Sabor");
 
 let chatHistory = [];
+
+function filtrar(cat, el) {
+    document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.style.display = (cat === 'todos' || card.dataset.cat === cat) ? '' : 'none';
+    });
+}
 let chatOpen = false;
 
 function toggleChat() {
