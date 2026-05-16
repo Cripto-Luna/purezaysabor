@@ -45,7 +45,7 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
     min-height: 600px;
     background:
         linear-gradient(rgba(44,26,21,0.55), rgba(44,26,21,0.45)),
-        url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=1600&q=80') center/cover no-repeat;
+        url('https://purezaysabor.com/assets/hero-desserts-zjzci52V.jpg') center/cover no-repeat;
     display: flex; align-items: center; justify-content: center;
     text-align: center; padding: 5rem 2rem;
 }
@@ -90,10 +90,16 @@ h1,h2,h3 { font-family: 'Playfair Display', serif; }
 }
 .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px var(--shadow); }
 .product-img {
-    height: 200px; position: relative;
+    height: 220px; position: relative;
+    overflow: hidden;
     display: flex; align-items: flex-end; padding: 1rem;
 }
+.product-img img {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; object-fit: cover;
+}
 .sin-azucar-badge {
+    position: relative; z-index: 1;
     background: rgba(255,255,255,0.92); color: var(--text);
     font-size: 0.72rem; font-weight: 600; padding: 0.3rem 0.7rem;
     border-radius: 20px; letter-spacing: 0.02em;
