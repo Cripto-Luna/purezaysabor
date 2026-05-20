@@ -93,6 +93,7 @@
         <input type="password" id="pwd-input" placeholder="Contraseña" onkeydown="if(event.key==='Enter') doLogin()">
         <button class="btn-green" onclick="doLogin()">Entrar</button>
         <div class="error-msg" id="login-error"></div>
+        <a href="../blog.html" style="display:block;margin-top:16px;color:#6b7280;font-size:.85rem;text-decoration:none">← Volver al blog</a>
     </div>
 </div>
 
@@ -100,7 +101,10 @@
 <div id="panel-screen">
     <div class="panel-header">
         <h2>🌿 Blog — Pureza y Sabor</h2>
-        <button class="btn-salir" onclick="salir()">Salir</button>
+        <div style="display:flex;gap:10px">
+            <a href="../blog.html" style="background:rgba(255,255,255,.15);color:#fff;padding:7px 16px;border-radius:8px;text-decoration:none;font-size:.88rem">← Ver blog</a>
+            <button class="btn-salir" onclick="salir()">Salir</button>
+        </div>
     </div>
 
     <div class="panel-body">

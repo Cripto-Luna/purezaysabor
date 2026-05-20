@@ -3,227 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pureza y Sabor — Postres saludables sin azúcar y sin gluten</title>
+    <title>Pureza y Sabor — Postres sin azúcar y sin gluten</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <svg class="logo-leaf" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-11 8"/>
-                </svg>
-                <span class="logo-text">Pureza y Sabor</span>
-            </div>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#inicio" class="nav-logo">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-11 8"/></svg>
+                Pureza y Sabor
+            </a>
             <ul class="nav-links">
                 <li><a href="#menu">Menú</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="blog.html">Blog</a></li>
+                <li><a href="#menu" class="nav-btn">Ordenar</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO FULLSCREEN -->
     <section class="hero" id="inicio">
+        <div class="hero-bg">
+            <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775935064564-8mpobl3g3co.png" alt="Pastel de Fresa" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="hero-content">
-            <h1>Disfrutá lo dulce...<br>sin culpa</h1>
-            <p class="hero-sub">Postres saludables, sin azúcar y sin gluten, listos para ordenar en minutos</p>
-            <a href="#productos" class="btn-primary">Ver menú y ordenar</a>
+            <p class="hero-tag">🌿 Sin azúcar · Sin gluten · 100% natural</p>
+            <h1>Lo dulce,<br><em>sin culpa.</em></h1>
+            <p class="hero-sub">Postres artesanales elaborados con ingredientes reales.<br>Entregamos en Tegucigalpa y sus alrededores.</p>
+            <a href="#menu" class="btn-hero">Ver menú completo</a>
+        </div>
+        <div class="hero-scroll">
+            <span>Deslizá</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- MENU CATEGORIES -->
+    <!-- PRODUCTOS FULLSCREEN -->
     <section class="menu-section" id="menu">
-        <h2>Nuestro Menú</h2>
-        <div class="menu-cats">
-            <div class="cat-card active" onclick="filtrar('todos', this)">
-                <div class="cat-icon">📦</div>
-                <span>Todos</span>
+        <div class="menu-label">
+            <h2>Nuestro Menú</h2>
+            <p>Todos elaborados con ingredientes reales, sin azúcar refinada y sin gluten</p>
+        </div>
+
+        <div class="product-full reveal" data-cat="pasteles">
+            <div class="pf-img">
+                <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775947303740-08gb16lnj6hh.png" alt="Pastel de Chocolate">
             </div>
-            <div class="cat-card" onclick="filtrar('pasteles', this)">
-                <div class="cat-icon">🎂</div>
-                <span>PASTELES</span>
+            <div class="pf-info">
+                <span class="pf-tag">Pasteles</span>
+                <h2>Pastel de Chocolate</h2>
+                <p>Textura suave y sabor profundo. Ideal para regalar o celebrar con 6 personas. Sin azúcar refinada, sin gluten.</p>
+                <div class="pf-price">L 800</div>
+                <button class="btn-order" onclick="quickOrder('Pastel de Chocolate para 6 personas',800)">Ordenar ahora</button>
             </div>
-            <div class="cat-card" onclick="filtrar('tortas', this)">
-                <div class="cat-icon">🍰</div>
-                <span>TORTAS</span>
+        </div>
+
+        <div class="product-full reveal reverse" data-cat="pasteles">
+            <div class="pf-img">
+                <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775935064564-8mpobl3g3co.png" alt="Pastel de Fresa">
             </div>
-            <div class="cat-card" onclick="filtrar('combos', this)">
-                <div class="cat-icon">🎁</div>
-                <span>COMBOS PARA REGALAR</span>
+            <div class="pf-info">
+                <span class="pf-tag">Pasteles</span>
+                <h2>Pastel de Fresa</h2>
+                <p>Fresco y naturalmente dulce. Para 10 a 12 personas, perfecto para eventos y celebraciones especiales.</p>
+                <div class="pf-price">L 1,450</div>
+                <button class="btn-order" onclick="quickOrder('Pastel de Fresa 10 a 12 personas',1450)">Ordenar ahora</button>
+            </div>
+        </div>
+
+        <div class="product-full reveal" data-cat="pasteles">
+            <div class="pf-img">
+                <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775942893435-4qhqg1egyfl.png" alt="Pastel de Zanahoria">
+            </div>
+            <div class="pf-info">
+                <span class="pf-tag">Pasteles</span>
+                <h2>Pastel de Zanahoria</h2>
+                <p>Aromático, suave y casero. Para 10 a 12 personas. Uno de los favoritos de nuestros clientes.</p>
+                <div class="pf-price">L 1,500</div>
+                <button class="btn-order" onclick="quickOrder('Pastel de Zanahoria 10 a 12 personas',1500)">Ordenar ahora</button>
+            </div>
+        </div>
+
+        <div class="product-full reveal reverse" data-cat="tortas">
+            <div class="pf-img">
+                <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775943535216-u1icgmh881.png" alt="Torta de Vainilla">
+            </div>
+            <div class="pf-info">
+                <span class="pf-tag">Tortas</span>
+                <h2>Torta de Vainilla con Yogurt</h2>
+                <p>Suave, ligera y con toque fresco del yogurt. Ideal para quienes buscan un sabor delicado y equilibrado.</p>
+                <div class="pf-price">L 800</div>
+                <button class="btn-order" onclick="quickOrder('Torta de Vainilla con Yogurt',800)">Ordenar ahora</button>
+            </div>
+        </div>
+
+        <div class="product-full reveal" data-cat="pasteles">
+            <div class="pf-img">
+                <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775943329271-afktnhu4e8n.png" alt="Loaf de Almendra">
+            </div>
+            <div class="pf-info">
+                <span class="pf-tag">Pasteles</span>
+                <h2>Loaf de Almendra</h2>
+                <p>Elegante, con sabor suave y sofisticado. Textura delicada con toque natural de almendra. Perfecta para momentos especiales.</p>
+                <div class="pf-price">L 600</div>
+                <button class="btn-order" onclick="quickOrder('Loaf de Almendra',600)">Ordenar ahora</button>
+            </div>
+        </div>
+
+        <div class="product-full reveal reverse" data-cat="pasteles">
+            <div class="pf-img">
+                <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775943241018-w526c4xw2gm.jpeg" alt="Loaf de Banano">
+            </div>
+            <div class="pf-info">
+                <span class="pf-tag">Pasteles</span>
+                <h2>Loaf de Banano</h2>
+                <p>Dulzor natural del banano mezclado con arándanos. Una combinación única, balanceada y deliciosa.</p>
+                <div class="pf-price">L 800</div>
+                <button class="btn-order" onclick="quickOrder('Loaf de Banano',800)">Ordenar ahora</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="nosotros-section" id="nosotros">
+        <div class="nos-header reveal">
+            <span class="pf-tag">Quiénes somos</span>
+            <h2>Postres que cuidan<br>tu salud y tu sabor</h2>
+            <p>En Pureza y Sabor creemos que disfrutar lo dulce no debería ser un sacrificio. Elaboramos cada postre con ingredientes 100% naturales, sin azúcar refinada y sin gluten.</p>
+            <p>Cada pedido es preparado con cuidado, listo para llegar fresco a tu puerta en Tegucigalpa y sus alrededores, con un mínimo de 3 días de anticipación.</p>
+        </div>
+        <div class="nos-cards reveal">
+            <div class="nos-card">
+                <div class="nos-num">0%</div>
+                <div class="nos-label">Azúcar refinada</div>
+                <p>Todos nuestros postres son libres de azúcar añadida. Endulzamos con ingredientes naturales.</p>
+            </div>
+            <div class="nos-card">
+                <div class="nos-num">100%</div>
+                <div class="nos-label">Natural</div>
+                <p>Sin conservantes artificiales. Solo ingredientes reales en cada preparación.</p>
+            </div>
+            <div class="nos-card">
+                <div class="nos-num">24/7</div>
+                <div class="nos-label">Atención online</div>
+                <p>Nuestro asistente está disponible todo el día para responder tus preguntas y recibir pedidos.</p>
+            </div>
+            <div class="nos-card">
+                <div class="nos-num">3 días</div>
+                <div class="nos-label">Anticipación mínima</div>
+                <p>Hacé tu pedido con tiempo y recibís tu postre fresco y listo para disfrutar.</p>
             </div>
         </div>
     </section>
 
-    <!-- PRODUCTS -->
-    <section class="productos-section" id="productos">
-        <h2>Nuestros Productos</h2>
-        <p class="section-sub">Hechos con ingredientes reales, sin azúcar y sin gluten</p>
-        <div class="products-grid">
-
-            <div class="product-card" data-cat="pasteles">
-                <div class="product-img">
-                    <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775943329271-afktnhu4e8n.png" alt="Loaf de Almendra">
-                    <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
-                </div>
-                <div class="product-info">
-                    <h3>Loaf de Almendra</h3>
-                    <p>Elegante y con un sabor suave y sofisticado. Su textura delicada y el toque natural de la almendra la hacen perfecta para momentos especiales.</p>
-                    <div class="product-footer">
-                        <span class="price">L 600</span>
-                        <button class="btn-agregar" onclick="quickOrder('Loaf de Almendra',600)">🛒 Ordenar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-cat="tortas">
-                <div class="product-img">
-                    <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775943535216-u1icgmh881.png" alt="Torta de Vainilla con Yogurt">
-                    <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
-                </div>
-                <div class="product-info">
-                    <h3>Torta de Vainilla con Yogurt</h3>
-                    <p>Suave, ligera y con un toque fresco gracias al yogurt. Perfecta para quienes buscan un sabor delicado y equilibrado, ideal para cualquier ocasión.</p>
-                    <div class="product-footer">
-                        <span class="price">L 800</span>
-                        <button class="btn-agregar" onclick="quickOrder('Torta de Vainilla con Yogurt',800)">🛒 Ordenar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-cat="pasteles">
-                <div class="product-img">
-                    <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775947303740-08gb16lnj6hh.png" alt="Pastel de Chocolate">
-                    <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
-                </div>
-                <div class="product-info">
-                    <h3>Pastel de Chocolate para 6 personas</h3>
-                    <p>Una opción elegante para cualquier ocasión. Su textura suave y sabor profundo la convierten en una excelente elección para regalar o celebrar.</p>
-                    <div class="product-footer">
-                        <span class="price">L 800</span>
-                        <button class="btn-agregar" onclick="quickOrder('Pastel de Chocolate para 6 personas',800)">🛒 Ordenar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-cat="pasteles">
-                <div class="product-img">
-                    <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775943241018-w526c4xw2gm.jpeg" alt="Loaf de Banano">
-                    <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
-                </div>
-                <div class="product-info">
-                    <h3>Loaf de Banano</h3>
-                    <p>Una combinación deliciosa y natural. El dulzor del banano se mezcla con el toque fresco de los arándanos para crear una opción única y balanceada.</p>
-                    <div class="product-footer">
-                        <span class="price">L 800</span>
-                        <button class="btn-agregar" onclick="quickOrder('Loaf de Banano',800)">🛒 Ordenar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-cat="pasteles">
-                <div class="product-img">
-                    <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775935064564-8mpobl3g3co.png" alt="Pastel de Fresa">
-                    <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
-                </div>
-                <div class="product-info">
-                    <h3>Pastel de Fresa 10 a 12 personas</h3>
-                    <p>Suave, fresco y naturalmente dulce. Elaborado con ingredientes seleccionados y sin azúcar refinada, perfecto para disfrutar sin culpa en momentos especiales.</p>
-                    <div class="product-footer">
-                        <span class="price">L 1,450</span>
-                        <button class="btn-agregar" onclick="quickOrder('Pastel de Fresa 10 a 12 personas',1450)">🛒 Ordenar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card" data-cat="pasteles">
-                <div class="product-img">
-                    <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775942893435-4qhqg1egyfl.png" alt="Pastel de Zanahoria">
-                    <div class="sin-azucar-badge">Sin Azúcar ♥ Ni Gluten</div>
-                </div>
-                <div class="product-info">
-                    <h3>Pastel de Zanahoria 10 a 12 personas</h3>
-                    <p>Ideal para compartir en familia o eventos. Mantiene su textura suave y sabor casero en una presentación más grande.</p>
-                    <div class="product-footer">
-                        <span class="price">L 1,500</span>
-                        <button class="btn-agregar" onclick="quickOrder('Pastel de Zanahoria 10 a 12 personas',1500)">🛒 Ordenar</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- BENEFITS -->
-    <section class="beneficios-section" id="beneficios">
-        <h2>¿Por qué elegirnos?</h2>
-        <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">❤️</div>
-                <h3>Sin azúcar, sin culpa</h3>
-                <p>Disfrutá sin preocupaciones. Todos nuestros productos son libres de azúcar añadida.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🌿</div>
-                <h3>Hecho con ingredientes reales</h3>
-                <p>Sin conservantes artificiales. Solo lo mejor de la naturaleza en cada bocado.</p>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">⚡</div>
-                <h3>Pedidos rápidos y fáciles</h3>
-                <p>Elegí, consultá con nuestro asistente y coordiná tu pedido en segundos.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- INFO -->
-    <section class="info-section">
-        <div class="info-box">
-            <h3>Información importante</h3>
-            <p>Pedidos con <strong>3 días de anticipación</strong> mínimo</p>
-            <p>Pago <strong>100% al confirmar</strong> — efectivo o transferencia bancaria</p>
-            <p>Entregas en <strong>Tegucigalpa y Comayagüela</strong> · Costo según zona (máx. 20 km)</p>
-        </div>
-    </section>
-
-    <!-- CTA -->
+    <!-- CTA FINAL -->
     <section class="cta-section">
-        <h2>Ordená fácil, comé delicioso y cuidate al mismo tiempo</h2>
-        <p>Tu pedido está a solo un clic de distancia</p>
-        <button class="btn-cta" onclick="openChat()">Ordenar ahora con asistente</button>
+        <div class="cta-bg">
+            <img src="https://qfleibrmbhcsldqplupg.supabase.co/storage/v1/object/public/product-images/uploads/1775942893435-4qhqg1egyfl.png" alt="">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="cta-content reveal">
+            <h2>Tu postre perfecto<br>está a un mensaje de distancia</h2>
+            <p>Nuestro asistente atiende las 24 horas, los 7 días de la semana</p>
+            <button class="btn-hero" onclick="openChat()">Hablar con el asistente</button>
+        </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-inner">
             <div class="footer-brand">
-                <div class="nav-logo">
-                    <svg class="logo-leaf" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-11 8"/>
-                    </svg>
-                    <span class="logo-text">Pureza y Sabor</span>
+                <div class="nav-logo" style="color:#fff;font-size:1.1rem">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style="color:rgba(255,255,255,.7)"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-11 8"/></svg>
+                    Pureza y Sabor
                 </div>
-                <p>Postres saludables, sin azúcar y sin gluten. Hechos con amor y los mejores ingredientes.</p>
+                <p>Postres saludables sin azúcar y sin gluten, hechos con amor.</p>
             </div>
-            <div class="footer-contact">
+            <div class="footer-col">
+                <h4>Menú</h4>
+                <a href="#menu">Pasteles</a>
+                <a href="#menu">Tortas</a>
+                <a href="blog.html">Blog</a>
+            </div>
+            <div class="footer-col">
                 <h4>Contacto</h4>
-                <p>📱 WhatsApp: +504 9708-3296</p>
-                <p>🚚 Tegucigalpa y Comayagüela</p>
-                <p>⏰ Asistente disponible 24/7</p>
+                <p>📱 +504 9708-3296</p>
+                <p>🚚 Tegucigalpa y alrededores</p>
+                <p>⏰ Asistente 24/7</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 Pureza y Sabor. Todos los derechos reservados.</p>
-        </div>
+        <div class="footer-bottom"><p>© 2026 Pureza y Sabor · Todos los derechos reservados</p></div>
     </footer>
 
-    <!-- CHATBOT FAB -->
-    <button class="chat-fab" onclick="toggleChat()" id="chatFab">💬 ¿Cómo te ayudamos?</button>
+    <!-- CHAT FAB -->
+    <button class="chat-fab" onclick="toggleChat()" id="chatFab">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+        <span>¿Te ayudamos?</span>
+    </button>
 
-    <!-- CHATBOT WIDGET -->
+    <!-- CHAT WIDGET -->
     <div id="chatWidget" class="chat-widget">
         <div class="chat-header" onclick="toggleChat()">
             <div class="chat-header-left">
@@ -236,15 +220,13 @@
             <button class="chat-close">✕</button>
         </div>
         <div class="chat-messages" id="chatMessages">
-            <div class="msg bot-msg">
-                <div class="msg-bubble">¡Hola! 🌿 Soy el asistente de <strong>Pureza y Sabor</strong>. ¿En qué te puedo ayudar hoy?</div>
-            </div>
+            <div class="msg bot-msg"><div class="msg-bubble">¡Hola! 🌿 Soy el asistente de <strong>Pureza y Sabor</strong>. ¿En qué te puedo ayudar hoy?</div></div>
         </div>
         <div class="chat-quick-btns" id="quickBtns">
             <button onclick="sendQuick('¿Qué productos tienen?')">🎂 Productos</button>
             <button onclick="sendQuick('¿Cuáles son los precios?')">💰 Precios</button>
             <button onclick="sendQuick('¿Cómo hago un pedido?')">📋 ¿Cómo ordenar?</button>
-            <button onclick="sendQuick('¿Hacen delivery? ¿A dónde llegan?')">🚚 Delivery</button>
+            <button onclick="sendQuick('¿Hacen delivery?')">🚚 Delivery</button>
             <button onclick="sendQuick('Quiero hablar con una persona')">👩 Hablar con alguien</button>
         </div>
         <div class="chat-input-area">
@@ -254,5 +236,30 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Navbar scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // Scroll con offset para navbar fija
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const id = this.getAttribute('href').slice(1);
+                const target = document.getElementById(id);
+                if (!target) return;
+                e.preventDefault();
+                const offset = 80;
+                const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            });
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
