@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Pureza y Sabor</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            padding: 80px 20px 40px;
+            text-align: center;
+        }
+        .blog-hero h1 { color: #15803d; font-size: 2.2rem; margin-bottom: 10px; }
+        .blog-hero p  { color: #4b7c5a; font-size: 1.1rem; }
+
+        .blog-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        .blog-empty {
+            text-align: center;
+            color: #999;
+            padding: 60px 20px;
+            font-size: 1.1rem;
+        }
+        .post-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 30px;
+            margin-bottom: 28px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .post-date {
+            font-size: 0.82rem;
+            color: #9ca3af;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+        .post-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #15803d;
+            margin-bottom: 14px;
+        }
+        .post-content {
+            color: #374151;
+            line-height: 1.8;
+            font-size: 0.97rem;
+            white-space: pre-wrap;
+        }
+        .loading { text-align: center; padding: 60px; color: #6b7280; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" style="text-decoration:none">
+                <svg class="logo-leaf" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-11 8"/>
+                </svg>
+                <span class="logo-text">Pureza y Sabor</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#menu">Menú</a></li>
+                <li><a href="index.html#productos">Productos</a></li>
+                <li><a href="blog.html" style="color:#15803d;font-weight:600">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="blog-hero">
+        <h1>Nuestro Blog</h1>
+        <p>Notas, recetas y consejos de Pureza y Sabor</p>
+    </section>
+
+    <div class="blog-container">
+        <div id="posts-list"><div class="loading">Cargando...</div></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="nav-logo">
+                    <svg class="logo-leaf" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2-11 8"/>
+                    </svg>
+                    <span class="logo-text">Pureza y Sabor</span>
+                </div>
+                <p>Postres saludables, sin azúcar y sin gluten.</p>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p>📱 WhatsApp: +504 9708-3296</p>
+                <p>🚚 Tegucigalpa y Comayagüela</p>
+                <p>⏰ Asistente disponible 24/7</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Pureza y Sabor. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const BACKEND = "https://web-production-20207.up.railway.app";
+
+        async function cargarPosts() {
+            const lista = document.getElementById("posts-list");
+            try {
+                const res = await fetch(`${BACKEND}/posts`);
+                const posts = await res.json();
+                if (!posts.length) {
+                    lista.innerHTML = '<div class="blog-empty">Pronto habrá notas aquí. ¡Volvé a visitar!</div>';
+                    return;
+                }
+                lista.innerHTML = posts.map(p => `
+                    <div class="post-card">
+                        <div class="post-date">📅 ${p.created_at}</div>
+                        <div class="post-title">${escHtml(p.title)}</div>
+                        <div class="post-content">${escHtml(p.content)}</div>
+                    </div>
+                `).join("");
+            } catch {
+                lista.innerHTML = '<div class="blog-empty">No se pudo cargar el blog. Intentá más tarde.</div>';
+            }
+        }
+
+        function escHtml(s) {
+            return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+        }
+
+        cargarPosts();
+    </script>
+</body>
+</html>
